@@ -1102,6 +1102,30 @@ body.ltr div#footer #footer-places {
   background-image: linear-gradient(transparent, transparent), /* @embed */ url('/skins/vector/images/external-link-ltr-icon.svg');
   padding-right: 13px;
 }
+.res-wrapper {
+  display: block;
+  margin: 30px 0px;
+}
+.res .r-head {
+  padding: 10px 12px 5px 15px;
+  background: #aaaaaa;
+  border-radius: 4px 4px 0px 0px;
+}
+.res .r-head.first-author {
+  background: #70cc93;
+}
+.res .r-head .pull-right {
+  float: right;
+}
+.res .r-body {
+  padding: 5px 10px 10px 15px;
+  background: #e8e8e8;
+  border-radius: 0px 0px 4px 4px;
+}
+.res .r-body.r-hidden-body {
+  background: black;
+  color: white;
+}
 /*
 	The styles below essentially place the navigation menu below the content,
 	instead of to the side of it. They also hide the logo, as there's no space

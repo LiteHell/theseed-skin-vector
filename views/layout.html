@@ -1,0 +1,242 @@
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+    <a id="top"></a>
+    <!--
+        이건 공지사항(예: XSS 공격 안내, 규정 개정 안내)용으로 쓰는 거임.
+        스킨 문서도 없고 뭐 어떻게 해야할지 모르겠으니 일단은 주석처리
+        <div id="siteNotice" class="mw-body-content">
+            게시판 공지사항 필독해주세요.
+        </div>
+        -->
+    <div class="mw-indicators mw-body-content"></div>
+    <h1 id="firstHeading" class="firstHeading" lang="ko">{{ skinInfo.title }}</h1>
+    <div id="bodyContent" class="mw-body-content">
+        <div id="siteSub" class="noprint"></div>
+        <div id="contentSub"></div>
+        {% if user_document_discuss %}
+        <div class="usermessage theseed-user-document-discuss-alert" data-id="{{ member.username }}-{{ user_document_discuss }}">현재 진행중인
+            <a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a>이 있습니다.</div>
+        {% endif %}
+        <div id="mw-content-text" class="mw-content-ltr wiki-article" dir="ltr">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="visualClear"></div>
+    </div>
+</div>
+<div id="mw-navigation">
+    <h2>둘러보기 메뉴</h2>
+    <div id="mw-head">
+        <div id="p-personal" role="navigation" aria-labelledby="p-personal-label">
+            <h3 id="p-personal-label">개인 도구</h3>
+            <ul>
+                {% if member %}
+                <li id="pt-userpage">
+                    <a href="/w/{{ member.username | encode_userdoc }}" title="내 사용자 문서 [Alt+Shift+.]" accesskey=".">{{ member.username }}</a>
+                </li>
+                <li id="pt-mytalk">
+                    <a href="/discuss/{{ member.username | encode_userdoc }}" title="내 토론 [Alt+Shift+n]" accesskey="n">토론</a>
+                </li>
+                <li id="pt-preferences">
+                    <a href="/myinfo" title="계정설정">계정 설정</a>
+                </li>
+                <li>
+                    <a href="/settings" title="스킨설정">스킨 설정</a>
+                </li>
+                <li id="pt-mycontris">
+                    <a href="/contribution/author/{{ member.username }}/document" title="내 기여 목록 [Alt+Shift+y]" accesskey="y">기여</a>
+                </li>
+                <li id="pt-logout">
+                    <a href="/logout?redirect={{ url | url_encode }}" title="로그아웃">로그아웃</a>
+                </li>
+                {% else %}
+                <li id="pt-anonuserpage">로그인하지 않음</li>
+                <!--
+                     IP 인수 모름 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+                        <li id="pt-anoncontribs">
+                        <a href="/contribution/author/{{ member.username }}/document" title="이 IP 주소의 편집 목록 [Alt+Shift+y]" accesskey="y">기여</a>
+                    </li>
+                    -->
+                <li id="pt-createaccount">
+                    <a href="/signup?redirect={{ url | url_encode }}" title="계정을 만들고 로그인하는 것이 좋습니다; 하지만, 필수는 아닙니다">계정 만들기</a>
+                </li>
+                <li id="pt-login">
+                    <a href="/login?redirect={{ url | url_encode }}" title="위키백과에 로그인하면 여러가지 편리한 기능을 사용할 수 있습니다. [Alt+Shift+o]" accesskey="o">로그인</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div id="left-navigation">
+            <div id="p-namespaces" class="vectorTabs" role="navigation" aria-labelledby="p-personal-label">
+                <h3 id="p-namespaces-label">이름공간</h3>
+                <ul>
+                    {% if document %}
+                    <li class="selected">
+                        <span>
+                            <a href="/w/{{ document|encode_doc }}">문서</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <a href="/discuss/{{ document|encode_doc }}">토론</a>
+                        </span>
+                    </li>
+                    {% else %}
+                    <li>
+                        <span>
+                            <a href="{{ url | url_encode }}">특수문서</a>
+                        </span>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div id="right-navigation">
+            {% if document %}
+            <div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+                <h3 id="p-views-label">보기</h3>
+                <ul>
+                    <li id="ca-view" class="collapsible selected">
+                        <span>
+                            <a href="/w/{{ document|encode_doc }}">읽기</a>
+                        </span>
+                    </li>
+                    <li id="ca-edit" class="collapsible">
+                        <span>
+                            <a href="/edit/{{ document|encode_doc }}" title="이 문서 편집하기 [Alt+Shift+e]" accesskey="e">편집</a>
+                        </span>
+                    </li>
+                    <span class="placeholder" style="display: none;"></span>
+                    <span class="placeholder" style="display: none;"></span>
+                </ul>
+            </div>
+            <div id="p-cactions" role="navigation" class="vectorMenu" aria-labelledby="p-cactions-label">
+                <h3 id="p-cactions-label" tabindex="0" style="width: 74px;">
+                    <span>더 보기</span>
+                </h3>
+                <div class="menu">
+                    <ul>
+                        <li class="collapsible" style="display: list-item;">
+                            <span>
+                                <a href="/history/{{ document|encode_doc }}" title="이 문서의 과거 편집 내역입니다. [Alt+Shift+h]" accesskey="h">역사 보기</a>
+                            </span>
+                        </li>
+                        <li class="collapsible" style="display: list-item;">
+                            <span>
+                                <a href="/delete/{{ document|encode_doc }}" title="이 문서를 삭제합니다.">삭제</a>
+                            </span>
+                        </li>
+                        <li class="collapsible" style="display: list-item;">
+                            <span>
+                                <a href="/move/{{ document|encode_doc }}" title="이 문서를 이동합니다.">이동</a>
+                            </span>
+                        </li>
+                        <li class="collapsible" style="display: list-item;">
+                            <span>
+                                <a href="/acl/{{ document|encode_doc }}" title="ACL을 봅니다.">ACL</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+            <div id="p-search" role="search">
+                <h3>
+                    <label for="searchInput">검색</label>
+                </h3>
+                <form id="searchform">
+                    <div id="simpleSearch">
+                        <input name="search" placeholder="더시드위키 검색" title="더시드위키 검색 [Alt+Shift+f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"
+                            type="search">
+                        <input name="go" value="보기" title="이 이름의 문서가 존재하면 그 문서로 바로 가기" id="searchButton" class="searchButton" type="submit"> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="mw-panel">
+        <div id="p-logo" role="banner">
+            <a class="mw-wiki-logo" href="/" title="대문으로 가기"></a>
+        </div>
+        <div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+            <h3 id="p-navigation-label">둘러보기</h3>
+            <div class="body">
+                <ul>
+                    <li>
+                        <a href="/" title="대문으로 가기 [Alt+Shift+z]" accesskey="z">대문</a>
+                    </li>
+                    <li>
+                        <a href="/RecentChanges" title="위키의 최근 바뀐 목록 [Alt+Shift+r]" accesskey="r">최근 바뀜</a>
+                    </li>
+                    <li>
+                        <a href="/RecentDiscuss" title="위키의 최근 토론 목록">최근 토론</a>
+                    </li>
+                    <li>
+                        <a href="/random" title="임의 문서 불러오기 [Alt+Shift+x]" accesskey="x">임의 문서로</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+            <h3 id="p-tb-label">도구</h3>
+            <div class="body">
+                <ul>
+                    <li>
+                        <a href="/xref/{{ document|encode_doc }}" title="여기를 가리키는 모든 위키 문서의 목록 [Alt+Shift+j]" accesskey="j">여기를 가리키는 문서</a>
+                    </li>
+                    <li>
+                        <a href="/Upload" title="파일 올리기 [Alt+Shift+u]" accesskey="u">파일 올리기</a>
+                    </li>
+                    <li>
+                        <a href="/NeededPages" title="필요한 문서">필요한 문서</a>
+                    </li>
+                    <li>
+                        <a href="/OrphanedPages" title="고립된 문서">고립된 문서</a>
+                    </li>
+                    <li>
+                        <a href="/OldPages" title="방치된 문서">방치된 문서</a>
+                    </li>
+                    <li>
+                        <a href="/ShortestPages" title="내용이 짧은 문서">내용이 짧은 문서</a>
+                    </li>
+                    <li>
+                        <a href="/LongestPages" title="내용이 긴 문서">내용이 긴 문서</a>
+                    </li>
+                    <li>
+                        <a href="/BlockHistory" title="차단 기록">차단 기록</a>
+                    </li>
+                    <li>
+                        <a href="/RandomPage" title="임의 문서들">임의 문서들</a>
+                    </li>
+                    <li>
+                        <a href="/License" title="라이선스">라이선스</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer" role="contentinfo">
+        {% if skinInfo.viewName == 'wiki' and data %}
+        <ul id="footer-info">
+            <li id="footer-info-lastmod">이 문서는 {{ date | to_date | localdate('Y-m-d H:i:sO') }}에 마지막으로 편집되었습니다.</li>
+            <li id="footer-info-copyright">모든 문서는 해당 위키의 저작권 정책에서 제시하는 CCL에 의해 사용될 수 있습니다. 자세한 사항은 해당 위키의 저작권 정책 및 이용약관을 참고하십시오.</li>
+        </ul>
+        {% endif %}
+        <ul id="footer-places">
+            <li>
+                <a href="/Policy" class="extiw">이용약관</a>
+                <a href="/License" class="extiw">엔진 라이선스</a>
+            </li>
+        </ul>
+        <ul class="footer-icons noprint">
+            <li class="footer-copyrightico">
+                <!-- <a href="https://creativecommons.org/licenses/??/?.0/">
+                    <img src="/resources/assets/licenses/cc-??.png" alt="크리에이티브 ?? ?.0" width="88" height="31">
+                </a> -->
+                <a href="#">Available under CCL ??-??-?? or ??-?? ?.0</a>
+            </li>
+            <li class="footer-poweredbyico">
+                <a href="//theseed.io/">Powered by the seed Engine</a>
+            </li>
+        </ul>
+    </div>
+</div>

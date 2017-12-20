@@ -1,26 +1,12 @@
-Vector Skin
-========================
+# theseed-skin-vector
+theseed-skin-vector is Ported version of [Mediawiki Vector skin](https://www.mediawiki.org/wiki/Skin:Vector).
+Please note that some files are imported from [mediawiki repo](https://phabricator.wikimedia.org/source/mediawiki/browse/master/) and [Wikimedia UI base](https://phabricator.wikimedia.org/source/wikimedia-ui-base/repository/master/) repo.
 
-Configuration options
----------------------
+# Build
+Before you use, install less globally, and then run this command.
+`
+lessc ./less/screen.less ./static/css/layout.css
+`
 
-### $wgVectorPrintLogo
-
-Logo used in print styles. Keys are `url`, `width`, and `height` (in
-pixels). Note that this solution only works correctly if the image
-pointed to by `url` is an SVG that does not specify width and height
-attributes, or its width and height match the corresponding variables
-below. Alternatively, a PNG or other type of image can be used, but
-its dimensions also need to match the corresponding variable below.
-That in turn may result in blurry images, though.
-
-Example configuration:
-
-	$wgVectorPrintLogo = [
-		'url' => 'https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg',
-		'width' => 174,
-		'height' => 27
-	];
-
-* Type: `Array`
-* Default: `false`
+# License
+This skin is a fork of Vector skin, so this skin is distributed under GPL 2.0 or later. For more information, see COPYING file.

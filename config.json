@@ -1,0 +1,101 @@
+{
+	"override_views": [
+	],
+	"static_files": [
+        "css/bootstrap.min.css",
+        "css/jquery-ui.min.css",
+        "css/layout.css",
+        "js/bootstrap.min.js",
+        "js/collapsibleTabs.js",
+        "js/jquery-ui.min.js",
+        "js/jquery.min.js",
+        "js/vector.js",
+        "js/tether.min.js",
+		"js/theseed.js",
+		"images/arrow-collapsed-ltr.png",
+		"images/arrow-collapsed-ltr.svg",
+		"images/arrow-collapsed-rtl.png",
+		"images/arrow-collapsed-rtl.svg",
+		"images/arrow-down-focus-icon.png",
+		"images/arrow-down-focus-icon.svg",
+		"images/arrow-down-icon.png",
+		"images/arrow-down-icon.svg",
+		"images/arrow-expanded.png",
+		"images/arrow-expanded.svg",
+		"images/bullet-icon.png",
+		"images/bullet-icon.svg",
+		"images/external-link-ltr-icon.png",
+		"images/external-link-ltr-icon.svg",
+		"images/external-link-rtl-icon.png",
+		"images/external-link-rtl-icon.svg",
+		"images/link-icon.png",
+		"images/loading.gif",
+		"images/magnify-clip.png",
+		"images/page-fade.png",
+		"images/portal-break-ltr.png",
+		"images/portal-break-rtl.png",
+		"images/portal-break.png",
+		"images/preferences",
+		"images/search-fade.png",
+		"images/search-ltr.png",
+		"images/search-ltr.svg",
+		"images/search-rtl.png",
+		"images/search-rtl.svg",
+		"images/tab-break.png",
+		"images/tab-current-fade.png",
+		"images/tab-normal-fade.png",
+		"images/unwatch-icon-hl.png",
+		"images/unwatch-icon-hl.svg",
+		"images/unwatch-icon.png",
+		"images/unwatch-icon.svg",
+		"images/user-icon.png",
+		"images/user-icon.svg",
+		"images/watch-icon-hl.png",
+		"images/watch-icon-hl.svg",
+		"images/watch-icon-loading.png",
+		"images/watch-icon-loading.svg",
+		"images/watch-icon.png",
+		"images/watch-icon.svg",
+		"images/wiki-logo.svg",
+		"images/preferences/break.png",
+		"images/preferences/fade.png"
+	],
+	"auto_js_targets": {
+		"*": [
+            {
+				"path": "js/jquery.min.js"
+			},
+			{
+				"path": "js/jquery-ui.min.js"
+            },
+            {
+				"path": "js/tether.min.js"
+			},
+			{
+				"path": "js/bootstrap.min.js"
+			},
+			{
+				"path": "js/collapsibleTabs.js"
+			},
+			{
+				"path": "js/vector.js"
+			},
+			{
+				"path": "js/theseed.js"
+			}
+		]
+	},
+	"auto_css_targets": {
+		"*": [        
+            "css/bootstrap.min.css",
+            "css/jquery-ui.min.css",
+            "css/layout.css"
+		]
+	},
+	"manual_file_targets": {
+	},
+	"body_classes": [
+		"vector"
+	],
+	"additional_heads": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+}

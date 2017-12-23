@@ -54,4 +54,8 @@ $(function() {
 			location.href = "/go/" + encodeURIComponent(val);
 		}
 	});
+	$("#skin-settings").click(function (evt){
+		evt.preventDefault();
+		alert('아직 개발중입니다.');
+	})
 });

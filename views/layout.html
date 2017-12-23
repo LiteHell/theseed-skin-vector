@@ -91,12 +91,12 @@
             <div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
                 <h3 id="p-views-label">보기</h3>
                 <ul>
-                    <li id="ca-view" class="collapsible selected">
+                    <li id="ca-view" class="collapsible{% if skinInfo.viewName == 'wiki' %} selected {% endif %}">
                         <span>
                             <a href="/w/{{ document|encode_doc }}">읽기</a>
                         </span>
                     </li>
-                    <li id="ca-edit" class="collapsible">
+                    <li id="ca-edit" class="collapsible{% if skinInfo.viewName == 'edit' %} selected {% endif %}">
                         <span>
                             <a href="/edit/{{ document|encode_doc }}" title="이 문서 편집하기 [Alt+Shift+e]" accesskey="e">편집</a>
                         </span>

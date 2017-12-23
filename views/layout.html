@@ -2,13 +2,11 @@
 <div id="mw-head-base" class="noprint"></div>
 <div id="content" class="mw-body" role="main">
     <a id="top"></a>
-    <!--
-        이건 공지사항(예: XSS 공격 안내, 규정 개정 안내)용으로 쓰는 거임.
-        스킨 문서도 없고 뭐 어떻게 해야할지 모르겠으니 일단은 주석처리
-        <div id="siteNotice" class="mw-body-content">
-            게시판 공지사항 필독해주세요.
-        </div>
-        -->
+    {% if config.getString('wiki.sitenotice', null) %}
+    <div id="siteNotice" class="mw-body-content">
+        {{ config.getString('wiki.sitenotice', '') | safe }}
+    </div>
+    {% endif %}
     <div class="mw-indicators mw-body-content"></div>
     <h1 id="firstHeading" class="firstHeading" lang="ko">{{ skinInfo.title }}</h1>
     <div id="bodyContent" class="mw-body-content">

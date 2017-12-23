@@ -1126,6 +1126,9 @@ body.ltr div#footer #footer-places {
   background: black;
   color: white;
 }
+textarea#textInput {
+  height: 500px;
+}
 /*
 	The styles below essentially place the navigation menu below the content,
 	instead of to the side of it. They also hide the logo, as there's no space

@@ -66,7 +66,7 @@
                 <h3 id="p-namespaces-label">이름공간</h3>
                 <ul>
                     {% if document %}
-                    <li {% if skinInfo.viewName != 'wiki' %}class="selected"{% endif %}>
+                    <li {% if skinInfo.viewName == 'discuss' %}class="selected"{% endif %}>
                         <span>
                             <a href="/w/{{ document|encode_doc }}">문서</a>
                         </span>

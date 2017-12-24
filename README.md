@@ -4,9 +4,9 @@ Please note that some files are imported from [mediawiki repo](https://phabricat
 
 # Build
 Before you use, install less globally, and then run this command.
-`
+```
 lessc ./less/screen.less ./static/css/layout.css
-`
+```
 
 # Wiki logo
 replace `static/images/wiki-logo.svg`

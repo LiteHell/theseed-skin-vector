@@ -50,7 +50,7 @@
                 {% else %}
                 <li id="pt-anonuserpage">로그인하지 않음</li>
                 <li id="pt-anoncontribs">
-                    <a href="/contribution/author/{{ req_ip }}/document" title="이 IP 주소의 편집 목록 [Alt+Shift+y]" accesskey="y">기여</a>
+                    <a href="/contribution/ip/{{ req_ip }}/document" title="이 IP 주소의 편집 목록 [Alt+Shift+y]" accesskey="y">기여</a>
                 </li>
                 <li id="pt-createaccount">
                     <a href="/signup?redirect={{ url | url_encode }}" title="계정을 만들고 로그인하는 것이 좋습니다; 하지만, 필수는 아닙니다">계정 만들기</a>

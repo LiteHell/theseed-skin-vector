@@ -57,7 +57,8 @@
 		"images/watch-icon.svg",
 		"images/wiki-logo.svg",
 		"images/preferences/break.png",
-		"images/preferences/fade.png"
+		"images/preferences/fade.png",
+		"images/licenses/cc-by-nc-sa-2.0-kr.png"
 	],
 	"auto_js_targets": {
 		"*": [

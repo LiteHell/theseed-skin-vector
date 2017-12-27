@@ -1,3 +1,6 @@
+{% set license_imgname = "cc-by-nc-sa-2.0-kr.png" %}
+{$ set license_name = "크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 2.0 대한민국" %}
+{$ set license_url = "//creativecommons.org/licenses/by-nc-sa/2.0/kr/" %}
 <div id="mw-page-base" class="noprint"></div>
 <div id="mw-head-base" class="noprint"></div>
 <div id="content" class="mw-body" role="main">
@@ -213,7 +216,7 @@
         {% if skinInfo.viewName == 'wiki' and data %}
         <ul id="footer-info">
             <li id="footer-info-lastmod">이 문서는 {{ date | to_date | localdate('Y-m-d H:i:sO') }}에 마지막으로 편집되었습니다.</li>
-            <li id="footer-info-copyright">모든 문서는 해당 위키의 저작권 정책에서 제시하는 CCL에 의해 사용될 수 있습니다. 자세한 사항은 해당 위키의 저작권 정책 및 이용약관을 참고하십시오.</li>
+            <li id="footer-info-copyright">모든 문서는 <a href="{{ license_url }}">{{ license_name }}</a>에 따라 사용될 수 있습니다.</li>
         </ul>
         {% endif %}
         <ul id="footer-places">
@@ -222,14 +225,13 @@
                 <a href="/License" class="extiw">엔진 라이선스</a>
             </li>
         </ul>
-        <ul class="footer-icons noprint">
-            <li class="footer-copyrightico">
-                <!-- <a href="https://creativecommons.org/licenses/??/?.0/">
-                    <img src="/resources/assets/licenses/cc-??.png" alt="크리에이티브 ?? ?.0" width="88" height="31">
-                </a> -->
-                <a href="#">Available under CCL ??-??-?? or ??-?? ?.0</a>
+        <ul id="footer-icons" class="noprint">
+            <li id="footer-copyrightico">
+                <a href="{{ license_url }}">
+                    <img src="/skins/vector/images/licenses/{{ license_imgname }}.png" alt="{{ license_name }}" width="88" height="31">
+                </a> 
             </li>
-            <li class="footer-poweredbyico">
+            <li id="footer-poweredbyico">
                 <a href="//theseed.io/">Powered by the seed Engine</a>
             </li>
         </ul>

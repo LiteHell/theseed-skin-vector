@@ -1,6 +1,6 @@
 {% set license_imgname = "cc-by-nc-sa-2.0-kr.png" %}
-{$ set license_name = "크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 2.0 대한민국" %}
-{$ set license_url = "//creativecommons.org/licenses/by-nc-sa/2.0/kr/" %}
+{% set license_name = "크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 2.0 대한민국" %}
+{% set license_url = "//creativecommons.org/licenses/by-nc-sa/2.0/kr/" %}
 <div id="mw-page-base" class="noprint"></div>
 <div id="mw-head-base" class="noprint"></div>
 <div id="content" class="mw-body" role="main">
@@ -213,7 +213,7 @@
         </div>
     </div>
     <div id="footer" role="contentinfo">
-        {% if skinInfo.viewName == 'wiki' and data %}
+        {% if skinInfo.viewName == 'wiki' and date %}
         <ul id="footer-info">
             <li id="footer-info-lastmod">이 문서는 {{ date | to_date | localdate('Y-m-d H:i:sO') }}에 마지막으로 편집되었습니다.</li>
             <li id="footer-info-copyright">모든 문서는 <a href="{{ license_url }}">{{ license_name }}</a>에 따라 사용될 수 있습니다.</li>
@@ -228,7 +228,7 @@
         <ul id="footer-icons" class="noprint">
             <li id="footer-copyrightico">
                 <a href="{{ license_url }}">
-                    <img src="/skins/vector/images/licenses/{{ license_imgname }}.png" alt="{{ license_name }}" width="88" height="31">
+                    <img src="/skins/vector/images/licenses/{{ license_imgname }}" alt="{{ license_name }}" width="88" height="31">
                 </a> 
             </li>
             <li id="footer-poweredbyico">

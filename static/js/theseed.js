@@ -56,6 +56,28 @@ $(function() {
 	});
 	$("#skin-settings").click(function (evt){
 		evt.preventDefault();
-		alert('아직 개발중입니다.');
-	})
+		// 스킨 설정 개발하기 귀찮음.
+		// 데헷★
+		if(confirm('이스터 에그를 아십니까?')) {
+			alert('그럼 지금부터 즐기시면 됩니다. Enjoy it.');
+		} else {
+			alert('그럼 지금부터 알게 해드리겠습니다');
+		}
+		var style = document.createElement("style");
+		style.innerHTML = "@keyframes shake {" +
+		  "10%, 90% {" +
+		  "	transform: translate(-20vw, 20vw) rotate(30deg);" +
+		  "}" +
+		  "20%, 80% {" +
+		  "	transform: translate(10vw,-10vw) rotate(-60deg);" +
+		  "}" +
+		  "30%, 50%, 70% {" +
+		  "	transform: translate(-30vw, 30vw) rotate(90deg);" +
+		  "}" +
+		  "40%, 60% {" +
+		  "	transform: translate(40vw, 40vw) rotate(-180deg);" +
+		  "}" +
+		  "} body { animation: shake infinite 0.1s; }";
+		document.head.appendChild(style);
+	});
 });

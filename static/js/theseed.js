@@ -58,11 +58,6 @@ $(function() {
 		evt.preventDefault();
 		// 스킨 설정 개발하기 귀찮음.
 		// 데헷★
-		if(confirm('이스터 에그를 아십니까?')) {
-			alert('그럼 지금부터 즐기시면 됩니다. Enjoy it.');
-		} else {
-			alert('그럼 지금부터 알게 해드리겠습니다');
-		}
 		var style = document.createElement("style");
 		style.innerHTML = "@keyframes shake {" +
 		  "10%, 90% {" +
@@ -79,5 +74,8 @@ $(function() {
 		  "}" +
 		  "} body { animation: shake infinite 0.1s; }";
 		document.head.appendChild(style);
+		setTimeout(function(){
+			document.head.removeChild(style);
+		}, 5000);
 	});
 });

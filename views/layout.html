@@ -59,7 +59,7 @@
                     <a href="/signup?redirect={{ url | url_encode }}" title="계정을 만들고 로그인하는 것이 좋습니다; 하지만, 필수는 아닙니다">계정 만들기</a>
                 </li>
                 <li id="pt-login">
-                    <a href="/login?redirect={{ url | url_encode }}" title="위키백과에 로그인하면 여러가지 편리한 기능을 사용할 수 있습니다. [Alt+Shift+o]" accesskey="o">로그인</a>
+                    <a href="/login?redirect={{ url | url_encode }}" title="{{config.getString('wiki.site_name', 'Wiki')}}에 로그인하면 여러가지 편리한 기능을 사용할 수 있습니다. [Alt+Shift+o]" accesskey="o">로그인</a>
                 </li>
                 {% endif %}
             </ul>

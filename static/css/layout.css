@@ -1169,10 +1169,38 @@ body.ltr div#footer #footer-places {
   display: block;
   margin: 30px 0px;
 }
+@keyframes head-loading {
+  from {
+    background-color: #747474;
+  }
+  to {
+    background-color: #cacaca;
+  }
+}
+@keyframes body-loading {
+  from {
+    background-color: #e2d7d7;
+  }
+  to {
+    background-color: #f3f3f3;
+  }
+}
+.res-wrapper.res-loading[data-visible="true"] .r-head {
+  animation: head-loading 0.5s infinite;
+}
+.res-wrapper.res-loading[data-visible="true"] .r-body {
+  animation: body-loading 0.5s infinite;
+}
+.topic-discuss a.more-box {
+  padding: 10px;
+  margin-left: 20px;
+  border: 1px solid black;
+}
 .res .r-head {
+  border: 1px #525252 solid;
+  border-bottom: 1px #525252 dotted;
   padding: 10px 12px 5px 15px;
   background: #aaaaaa;
-  border-radius: 4px 4px 0px 0px;
 }
 .res .r-head.first-author {
   background: #70cc93;
@@ -1181,16 +1209,23 @@ body.ltr div#footer #footer-places {
   float: right;
 }
 .res .r-body {
+  border: 1px #525252 solid;
+  border-top: none;
   padding: 5px 10px 10px 15px;
   background: #e8e8e8;
-  border-radius: 0px 0px 4px 4px;
 }
 .res .r-body.r-hidden-body {
-  background: black;
+  background: #332636;
   color: white;
 }
 .res .r-body.r-hidden-body .hidden-content {
   display: none;
+}
+.res .r-body.r-hidden-body:hover {
+  background: #1a131b;
+}
+.res .combo.admin-menu {
+  padding: 5px;
 }
 .res.res-type-status .r-body {
   background: orange;
@@ -1199,6 +1234,14 @@ textarea#textInput,
 iframe#previewFrame {
   height: 500px;
   width: 100%;
+}
+iframe#previewFrame {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: .25rem;
+}
+/* fix breadcrumb being in multiple liens in some pages such as RecentChanges/RecenctDiscuss */
+.mw-body-content ol.breadcrumb > li {
+  display: inline-block;
 }
 /*
 	The styles below essentially place the navigation menu below the content,

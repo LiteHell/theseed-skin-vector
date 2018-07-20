@@ -76,6 +76,12 @@
                             <a href="/discuss/{{ document|encode_doc }}">토론</a>
                         </span>
                     </li>
+                    {% if skinInfo.viewName == 'wiki' && user %}
+                    <li>
+                        <span>
+                            <a href="/contribution/author/{{ document.title|url_encode }}/document">기여목록</a>
+                        </span>
+                    </li>
                     {% else %}
                     <li>
                         <span>

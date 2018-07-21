@@ -76,7 +76,7 @@
                             <a href="/discuss/{{ document|encode_doc }}">토론</a>
                         </span>
                     </li>
-                    {% if skinInfo.viewName == 'wiki' && user %}
+                    {% if user %}
                     <li>
                         <span>
                             <a href="/contribution/author/{{ document.title|url_encode }}/document">기여목록</a>
@@ -235,3 +235,8 @@
         </ul>
     </div>
 </div>
+<style>
+    .mw-wiki-logo {
+        background-image: url("{{ config.getString('wiki.logo_url', '/skins/vector/images/wiki-logo.svg'}}")
+    }
+</style>

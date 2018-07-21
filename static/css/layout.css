@@ -1346,6 +1346,5 @@ iframe#previewFrame {
 }
 /* Set wiki logo */
 .mw-wiki-logo {
-  background-image: url(/skins/vector/images/wiki-logo.svg);
   background-size: 135px auto;
 }

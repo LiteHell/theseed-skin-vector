@@ -5,13 +5,55 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    id="svg8"
    version="1.1"
-   viewBox="0 0 256 256"
-   height="256mm"
-   width="256mm">
+   viewBox="0 0 135.46666 135.46667"
+   height="512"
+   width="512">
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       id="upper-7">
+      <stop
+         style="stop-color:#431e00;stop-opacity:1"
+         offset="0"
+         id="stop5159" />
+      <stop
+         style="stop-color:#502300;stop-opacity:0.9862259"
+         offset="1"
+         id="stop5161" />
+    </linearGradient>
+    <linearGradient
+       id="under-3">
+      <stop
+         id="stop5081"
+         offset="0"
+         style="stop-color:#553408;stop-opacity:1" />
+      <stop
+         id="stop5083"
+         offset="1"
+         style="stop-color:#643c00;stop-opacity:0.96078432" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(0.78007234,0,0,3.3945962,14.792612,-528.79261)"
+       gradientUnits="userSpaceOnUse"
+       y2="219.97855"
+       x2="117.03444"
+       y1="219.97855"
+       x1="20.805731"
+       id="linearGradient5087"
+       xlink:href="#upper-7" />
+    <linearGradient
+       gradientTransform="matrix(0.74751042,0,0,1,16.99642,0)"
+       gradientUnits="userSpaceOnUse"
+       y2="254.83823"
+       x2="106.22521"
+       y1="254.83823"
+       x1="31.319024"
+       id="linearGradient5103"
+       xlink:href="#under-3" />
+  </defs>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -25,29 +67,35 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0,-41)"
+     transform="translate(0,-161.53332)"
      id="layer1">
-    <text
-       id="text4487"
-       y="158.6983"
-       x="4.2323637"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
-         y="158.6983"
-         x="4.2323637"
-         id="tspan4485">PLEASE CHANGE static/images/wiki-logo.svg</tspan><tspan
-         id="tspan4491"
-         style="stroke-width:0.26458332"
-         y="171.92747"
-         x="4.2323637">If you don't have svg file, edit less/screen.less</tspan><tspan
-         id="tspan4493"
-         style="stroke-width:0.26458332"
-         y="185.15663"
-         x="4.2323637">to use bitmap logo</tspan><tspan
-         id="tspan4489"
-         style="stroke-width:0.26458332"
-         y="198.3858"
-         x="4.2323637" /></text>
+    <path
+       id="rect5033"
+       d="m 40.407717,222.84711 h 55.99316 l -5.568484,63.90034 -44.810068,0.0819 z"
+       style="opacity:1;fill:url(#linearGradient5103);fill-opacity:1;stroke:none;stroke-width:4.70636511;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="rect5031"
+       d="m 33.744702,211.71852 69.379298,0.32248 -0.70707,11.81289 -68.17728,0.32248 z"
+       style="opacity:1;fill:url(#linearGradient5087);fill-opacity:1;stroke:none;stroke-width:9.56020546;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="rect5066"
+       d="m 63.801587,265.51575 1.926141,-11.55836 a 7.1101663,7.5611728 0 0 1 -3.826151,-6.7024 7.1101663,7.5611728 0 0 1 7.11055,-7.56114 7.1101663,7.5611728 0 0 1 7.110139,7.56114 7.1101663,7.5611728 0 0 1 -3.689386,6.62773 l 1.504005,11.63303 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.28436947;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       transform="matrix(0.83713582,-0.54699508,0.47175476,0.8817298,0,0)"
+       ry="6.2842498"
+       rx="9.6472673"
+       cy="195.72562"
+       cx="-25.865511"
+       id="path5405"
+       style="opacity:1;fill:#6c2f00;fill-opacity:0.9862259;stroke:none;stroke-width:4.90696907;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       transform="rotate(-10.288502)"
+       ry="0.94494051"
+       rx="1.7953869"
+       cy="191.1651"
+       cx="39.920769"
+       id="path5407"
+       style="opacity:1;fill:#ffffff;fill-opacity:0.98622592;stroke:none;stroke-width:3.71969771;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

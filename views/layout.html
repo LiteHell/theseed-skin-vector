@@ -76,13 +76,6 @@
                             <a href="/discuss/{{ document|encode_doc }}">토론</a>
                         </span>
                     </li>
-                    {% if user %}
-                    <li>
-                        <span>
-                            <a href="/contribution/author/{{ document.title|url_encode }}/document">기여목록</a>
-                        </span>
-                    </li>
-                    {% endif %}
                     {% else %}
                     <li>
                         <span>
@@ -185,6 +178,11 @@
                     <li>
                         <a href="/xref/{{ document|encode_doc }}" title="여기를 가리키는 모든 위키 문서의 목록 [Alt+Shift+j]" accesskey="j">여기를 가리키는 문서</a>
                     </li>
+                    {% if user %}
+                    <li>
+                        <a href="/contribution/author/{{ document.title|url_encode }}/document">사용자 기여</a>
+                    </li>
+                    {% endif %}
                     <li>
                         <a href="/Upload" title="파일 올리기 [Alt+Shift+u]" accesskey="u">파일 올리기</a>
                     </li>

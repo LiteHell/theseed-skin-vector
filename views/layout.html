@@ -11,16 +11,17 @@
     <h1 id="firstHeading" class="firstHeading" lang="ko">{{ skinInfo.title }}</h1>
     <div id="bodyContent" class="mw-body-content">
         <div id="siteSub" class="noprint"></div>
-        <div id="contentSub"></div>
-        {% if user_document_discuss %}
-        <div class="usermessage theseed-user-document-discuss-alert" data-id="{{ member.username }}-{{ user_document_discuss }}">현재 진행중인
-            <a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a>이 있습니다.</div>
-        {% endif %}
+        <div id="contentSub">
         {% if rev %}
         <div class="mw-revision">
             <div id="mw-revision-info">{{ date | to_date | localdate('Y-m-d H:i:sO') }}에 작성된 r{{ rev }} 판</div>
             <!-- <div id="mv-revision-nav"></div> -->
         </div>
+        {% endif %}
+        </div>
+        {% if user_document_discuss %}
+        <div class="usermessage theseed-user-document-discuss-alert" data-id="{{ member.username }}-{{ user_document_discuss }}">현재 진행중인
+            <a href="/discuss/{{ member.username | encode_userdoc }}">사용자토론</a>이 있습니다.</div>
         {% endif %}
         <div id="mw-content-text" class="mw-content-ltr wiki-article" dir="ltr">
             {% block content %}{% endblock %}

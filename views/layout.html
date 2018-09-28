@@ -48,6 +48,9 @@
                 <li id="pt-mycontris">
                     <a href="/contribution/author/{{ member.username }}/document" title="내 기여 목록 [Alt+Shift+y]" accesskey="y">기여</a>
                 </li>
+                <li id="pt-watchlist">
+                    <a href="/member/starred_count" title="주시문서 목록 [Alt+Shift+l]" accesskey="l">주시문서 목록</a>
+                </li>
                 <li id="pt-logout">
                     <a href="/member/logout?redirect={{ url | url_encode }}" title="로그아웃">로그아웃</a>
                 </li>
@@ -105,6 +108,19 @@
                             <a href="/edit/{{ document|encode_doc }}" title="이 문서 편집하기 [Alt+Shift+e]" accesskey="e">편집</a>
                         </span>
                     </li>
+                    <li id="ca-history" class="collapsible{% if skinInfo.viewName == 'history' %} selected {% endif %}">
+                        <span>
+                            <a href="/history/{{ document|encode_doc }}" title="이 문서의 과거 편집 내역입니다. [Alt+Shift+h]" accesskey="h">역사 보기</a>
+                        </span>
+                    </li>
+                    <!-- 원본은 주시문서 설정시 빙글빙글 돌아가는 등의 애니메이션이 있지만 귀찮아서 구현 안함. -->
+                    {% if star_count >= 0 %}
+                    <li id="ca-{% if starred %}un{% endif %}watch" class="collapsible icon mw-watchlink">
+                        <span>
+                            <a href="/member/star/{{ document|encode_doc }}" data-mw="interface" title="이 문서를 주시문서 목록에 추가 [Alt+Shift+w] ({{ star_count }}명이 주시중)" accesskey="w">주시{% if starred %} 해제{% endif %}</a>
+                        </span>
+                    </li>
+                    {% endif %}
                     <span class="placeholder" style="display: none;"></span>
                     <span class="placeholder" style="display: none;"></span>
                 </ul>
@@ -115,11 +131,6 @@
                 </h3>
                 <div class="menu">
                     <ul>
-                        <li class="collapsible" style="display: list-item;">
-                            <span>
-                                <a href="/history/{{ document|encode_doc }}" title="이 문서의 과거 편집 내역입니다. [Alt+Shift+h]" accesskey="h">역사 보기</a>
-                            </span>
-                        </li>
                         <li class="collapsible" style="display: list-item;">
                             <span>
                                 <a href="/delete/{{ document|encode_doc }}" title="이 문서를 삭제합니다.">삭제</a>

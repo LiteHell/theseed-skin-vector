@@ -145,7 +145,7 @@
                 </h3>
                 <form id="searchform">
                     <div id="simpleSearch">
-                        <input name="search" placeholder="더시드위키 검색" title="더시드위키 검색 [Alt+Shift+f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"
+                        <input name="search" placeholder="{{ config.getString('wiki.site_name', '위키') }} 검색" title="{{ config.getString('wiki.site_name', '위키') }} 검색 [Alt+Shift+f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"
                             type="search">
                         <input name="go" value="보기" title="이 이름의 문서가 존재하면 그 문서로 바로 가기" id="searchButton" class="searchButton" type="submit"> </div>
                 </form>

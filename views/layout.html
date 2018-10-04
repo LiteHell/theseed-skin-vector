@@ -84,6 +84,13 @@
                         </span>
                     </li>
                     {% else %}
+                    {% if user %}
+                    <li>
+                        <span>
+                            <a href="/contribution/author/{{ document.title|url_encode }}/document">기여내역</a>
+                        </span>
+                    </li>
+                    {% endif %}
                     <li>
                         <span>
                             <a href="{{ url }}">특수문서</a>
@@ -117,7 +124,7 @@
                     {% if star_count >= 0 %}
                     <li id="ca-{% if starred %}un{% endif %}watch" class="collapsible icon mw-watchlink">
                         <span>
-                            <a href="/member/star/{{ document|encode_doc }}" data-mw="interface" title="이 문서를 주시문서 목록에 추가 [Alt+Shift+w] ({{ star_count }}명이 주시중)" accesskey="w">주시{% if starred %} 해제{% endif %}</a>
+                            <a href="/member/{% if starred %}un{% endif %}star/{{ document|encode_doc }}" data-mw="interface" title="이 문서를 주시문서 목록에 추가 [Alt+Shift+w] ({{ star_count }}명이 주시중)" accesskey="w">주시{% if starred %} 해제{% endif %}</a>
                         </span>
                     </li>
                     {% endif %}

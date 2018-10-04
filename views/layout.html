@@ -12,7 +12,7 @@
     <div id="bodyContent" class="mw-body-content">
         <div id="siteSub" class="noprint"></div>
         <div id="contentSub">
-        {% if rev %}
+        {% if rev && skinInfo.viewName == 'wiki' %}
         <div class="mw-revision">
             <div id="mw-revision-info">{{ date | to_date | localdate('Y-m-d H:i:sO') }}에 작성된 r{{ rev }} 판</div>
             <!-- <div id="mv-revision-nav"></div> -->
